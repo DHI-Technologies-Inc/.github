@@ -16,7 +16,7 @@ camera can actually carry.
   accuracy bar. We gate compressed artifacts against a measured accuracy
   floor and refuse to ship one that misses it, rather than silently
   degrading quality.
-- **Honesty-as-a-feature engineering.** Across our products this shows up
+- **Honesty-as-a-feature engineering.** Across our research systems this shows up
   as concrete mechanisms, not slogans:
   - **Refusal gates** - a component that cannot meet its stated bar (an
     accuracy floor, a confidence threshold) declines to produce an answer
@@ -53,15 +53,15 @@ are public, and we will not claim otherwise before then.
 
 ## How we work
 
-- Every product ships with tests against synthetic ground truth before
-  any real-data claim, and real measurements before a README states a
-  number.
+- Every research system is built with tests against synthetic ground truth
+  before any real-data claim, and real measurements before a README states
+  a number.
 - GPU-dependent work is published as recipes and CPU-verified math until
   the on-device measurement exists - we do not fake training runs or
   invent benchmark numbers.
-- Repos are organized one product per repository. Most are private while
-  under active development; we open-source pieces as they mature, starting
-  with Prompt2Model above.
+- Repos are organized one research system per repository. Most are private
+  while under active development; we open-source pieces as they mature,
+  starting with Prompt2Model above.
 
 ## Contact
 
