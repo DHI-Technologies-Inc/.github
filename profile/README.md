@@ -63,6 +63,19 @@ are public, and we will not claim otherwise before then.
   while under active development; we open-source pieces as they mature,
   starting with Prompt2Model above.
 
+## Licensing and pricing
+
+- **Research use is free.** Public repos carry a noncommercial license; use
+  them for research without asking us.
+- **Commercial use is self-serve.** A Developer license is $190/month or
+  $1,900/year per product (one company, up to 5 devices, license key issued
+  at checkout); Site licenses cover up to 50 devices. Buy directly at
+  `dhi-tech.com/buy/<product>`, e.g.
+  [buy/edge-scene-graphs](https://dhi-tech.com/buy/edge-scene-graphs).
+- **Everything else** (the edge-vms per-camera SaaS, safety pilots, hosted
+  APIs, OEM licensing) is on the pricing page:
+  [dhi-tech.com/pricing](https://dhi-tech.com/pricing).
+
 ## Contact
 
 Reach us through [dhi-tech.com](https://dhi-tech.com) or open an issue on
