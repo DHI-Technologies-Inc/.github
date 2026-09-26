@@ -1,16 +1,17 @@
 # Dhi Technologies
 
-Dhi builds edge-native video analytics: perception software that runs
-directly on the camera-side compute (NVIDIA Jetson-class hardware) instead
-of shipping raw video to a cloud GPU. The goal is analytics that keep
+Dhi builds edge-native video analytics: perception software that runs on
+a local edge node next to the cameras a site already has, on any GPU,
+instead of shipping raw video to a cloud GPU. The goal is analytics that keep
 working when the network doesn't, at a power and cost budget a fixed
 camera can actually carry.
 
 ## What we build
 
 - **Edge-native pipelines.** Detection, tracking, re-identification, scene
-  understanding, and alerting run on-device (Jetson Orin class hardware
-  today), with cloud/cloud-edge sync as an addition, not a dependency.
+  understanding, and alerting run on the site's edge node, small enough for
+  an 8 GB module at a remote site with no rack, with cloud/cloud-edge sync
+  as an addition, not a dependency.
 - **Model compression that ships or refuses.** Distillation and
   quantization are only useful if the compressed model still meets its
   accuracy bar. We gate compressed artifacts against a measured accuracy
