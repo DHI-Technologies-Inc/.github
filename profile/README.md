@@ -1,83 +1,67 @@
 # Dhi Technologies
 
-Dhi builds edge-native video analytics: perception software that runs on
-a local edge node next to the cameras a site already has, on any GPU,
-instead of shipping raw video to a cloud GPU. The goal is analytics that keep
-working when the network doesn't, at a power and cost budget a fixed
-camera can actually carry.
+Dhi builds edge-native video analytics: perception software that runs on a local edge
+node next to the cameras a site already has, on any GPU. The aim is analytics that keep
+working when the network is slow, on a power and cost budget a fixed camera can carry.
 
 ## What we build
 
 - **Edge-native pipelines.** Detection, tracking, re-identification, scene
-  understanding, and alerting run on the site's edge node, small enough for
-  an 8 GB module at a remote site with no rack, with cloud/cloud-edge sync
-  as an addition, not a dependency.
-- **Model compression that ships or refuses.** Distillation and
-  quantization are only useful if the compressed model still meets its
-  accuracy bar. We gate compressed artifacts against a measured accuracy
-  floor and refuse to ship one that misses it, rather than silently
-  degrading quality.
-- **Honesty-as-a-feature engineering.** Across our research systems this shows up
-  as concrete mechanisms, not slogans:
-  - **Refusal gates** - a component that cannot meet its stated bar (an
-    accuracy floor, a confidence threshold) declines to produce an answer
-    instead of guessing.
-  - **Calibration** - reported confidence is checked against measured
-    correctness, not asserted.
-  - **Falsification ledgers** - claims and experiments are recorded so
-    they can be checked and disproven, not just cited.
-
-  We would rather say "this doesn't work yet, here is the measurement"
-  than overstate a result.
+  understanding, and alerting run on the site's edge node, small enough for an 8 GB
+  module at a remote site with no rack. Cloud and cloud-edge sync are additions to that
+  path.
+- **Model compression with a measured gate.** Distillation and quantization ship only
+  when the compressed model meets its accuracy floor. Each compressed artifact is
+  measured against that floor, and the factory keeps the uncompressed model when the
+  floor is not met.
+- **Evidence-first engineering.** Across our research systems this shows up as concrete
+  mechanisms:
+  - **Refusal gates.** A component that cannot meet its stated bar, such as an accuracy
+    floor or a confidence threshold, returns an explicit, logged refusal.
+  - **Calibration.** Reported confidence is checked against measured correctness.
+  - **Recorded experiments.** Claims and experiments are recorded with their inputs and
+    code hashes, so each result can be re-run and checked.
 
 ## Where to find us
 
 - **Website:** [dhi-tech.com](https://dhi-tech.com)
 - **Hugging Face:** [huggingface.co/Dhi-Technologies](https://huggingface.co/Dhi-Technologies)
-  - benchmark datasets and interactive demo Spaces built from our
-    engineering work
+  - benchmark datasets and demo Spaces built from our engineering work
   - engineering blog: [huggingface.co/datasets/Dhi-Technologies/blog](https://huggingface.co/datasets/Dhi-Technologies/blog)
-- **Public code:** [Prompt2Model - Language-Guided Vision Model Factory](https://github.com/DHI-Technologies-Inc/Prompt2Model-Language-Guided-Vision-Model-Factory) -
-  a natural-language front end that compiles a plain-English task
-  description into a trained, calibrated, edge-deployable vision model
-  (classification and detection), with an optional distill/quantize
-  compression stage gated on measured accuracy.
+- **Intent2Edge** ([repository](https://github.com/DHI-Technologies-Inc/Prompt2Model-Language-Guided-Vision-Model-Factory),
+  Language-Guided Vision Model Factory): a natural-language front end that compiles a
+  plain-English task description into a trained, calibrated, edge-deployable vision
+  model (classification and detection), with an optional distill and quantize
+  compression stage gated on measured accuracy. Paper:
+  *Intent2Edge: Compiling Natural-Language Intent into Refuse-Closed Edge Vision Artifacts*.
+  Demo: [huggingface.co/spaces/Dhi-Technologies/intent2edge-demo](https://huggingface.co/spaces/Dhi-Technologies/intent2edge-demo).
+  Reference model: [huggingface.co/Dhi-Technologies/intent2edge-reference-onnx](https://huggingface.co/Dhi-Technologies/intent2edge-reference-onnx).
 
 ## Research track
 
-Dhi Labs is our research track. We are working through a portfolio of
-papers on edge perception (thermal-only sensing, fixed-camera 3D from
-monocular video, causal predictive alerting, neuro-symbolic scene graphs,
-and related topics). These are in preparation and internal review; none
-are published on arXiv or elsewhere yet. We will link them here once they
-are public, and we will not claim otherwise before then.
+Dhi Labs is our research track. Its papers cover edge perception: thermal sensing,
+fixed-camera 3D from monocular video, scene graphs, causal predictive alerting,
+multi-camera reasoning memory, amodal counting, appearance-based re-identification, and
+Intent2Edge. Paper repositories state their title, venue, results, and reproduction
+steps, with the evidence records committed alongside.
 
 ## How we work
 
-- Every research system is built with tests against synthetic ground truth
-  before any real-data claim, and real measurements before a README states
-  a number.
-- GPU-dependent work is published as recipes and CPU-verified math until
-  the on-device measurement exists - we do not fake training runs or
-  invent benchmark numbers.
-- Repos are organized one research system per repository. Most are private
-  while under active development; we open-source pieces as they mature,
-  starting with Prompt2Model above.
+- Each research system is built with tests against synthetic ground truth first, and
+  its README states real-data numbers once they are measured.
+- GPU-dependent work is published as recipes and CPU-verified math, with the on-device
+  measurement recorded when it exists.
+- Repositories are organized one research system per repository.
 
-## Licensing and pricing
+## Licensing
 
-- **Research use is free.** Public repos carry a noncommercial license; use
-  them for research without asking us.
-- **Commercial use is self-serve.** A Developer license is $190/month or
-  $1,900/year per product (one company, up to 5 devices, license key issued
-  at checkout); Site licenses cover up to 50 devices. Buy directly at
-  `dhi-tech.com/buy/<product>`, e.g.
-  [buy/edge-scene-graphs](https://dhi-tech.com/buy/edge-scene-graphs).
-- **Everything else** (the edge-vms per-camera SaaS, safety pilots, hosted
-  APIs, OEM licensing) is on the pricing page:
-  [dhi-tech.com/pricing](https://dhi-tech.com/pricing).
+- **Research use.** Research, academic, and evaluation use of our public repositories is
+  covered by the license in each repository.
+- **Commercial use.** Commercial licensing is arranged directly with us. Contact
+  [hello@dhi-tech.com](mailto:hello@dhi-tech.com) or visit
+  [dhi-tech.com](https://dhi-tech.com).
 
 ## Contact
 
-Reach us through [dhi-tech.com](https://dhi-tech.com) or open an issue on
-one of our public repositories.
+Reach us through [dhi-tech.com](https://dhi-tech.com) or open an issue on one of our
+repositories.
