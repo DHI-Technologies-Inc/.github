@@ -28,8 +28,7 @@ working when the network is slow, on a power and cost budget a fixed camera can 
 - **Hugging Face:** [huggingface.co/Dhi-Technologies](https://huggingface.co/Dhi-Technologies)
   - benchmark datasets and demo Spaces built from our engineering work
   - engineering blog: [huggingface.co/datasets/Dhi-Technologies/blog](https://huggingface.co/datasets/Dhi-Technologies/blog)
-- **Intent2Edge** ([repository](https://github.com/DHI-Technologies-Inc/Prompt2Model-Language-Guided-Vision-Model-Factory),
-  Language-Guided Vision Model Factory): a natural-language front end that compiles a
+- **Intent2Edge** (Language-Guided Vision Model Factory): a natural-language front end that compiles a
   plain-English task description into a trained, calibrated, edge-deployable vision
   model (classification and detection), with an optional distill and quantize
   compression stage gated on measured accuracy. Paper:
